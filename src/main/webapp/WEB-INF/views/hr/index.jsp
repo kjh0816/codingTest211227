@@ -13,12 +13,13 @@
 
 
 <body>
-<nav>
-<aside>
+<div class="row">
+
 	<%@include file="/WEB-INF/views/common/left.jsp"%>
-</aside>
-  <%@include file="/WEB-INF/views/hr/main.jsp"%>
- </nav>
+
+
+	<%@include file="/WEB-INF/views/hr/main.jsp"%>
+ </div>
 </body>
 
 </html>

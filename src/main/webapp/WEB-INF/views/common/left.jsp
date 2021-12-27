@@ -9,7 +9,7 @@
 	<title>Untitled Document</title>
 </head>
 <body>
-<div class="box_left">
+<div class="box_left cell">
 	<div class="left_top"></div>
 	<div class="left_cont">
 		<ul class="left_menu">
@@ -31,7 +31,8 @@
 	<div class="left_bottom"></div>
 	<div class="left_search">
 		<label class="left_label"><img alt="icon" src="/resources/image/left_icon.gif"> 경력검색</label>
-		<input name="textfield" type="text" class="left_flat" size="9" maxlength="14"> 
+		<br>
+		<input class="left_flat" name="textfield" type="text" size="9" maxlength="14"> 
 		<a href="#"><img alt="search" src="/resources/image/search.gif"></a>
 	</div>
 </div>

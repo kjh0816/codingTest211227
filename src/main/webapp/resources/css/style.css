@@ -1,6 +1,11 @@
 @CHARSET "UTF-8";
 
-#index_main{
+.row::after{
+	clear: both;
+	display: block;
+	content: "";
+}
+.cell{
 	float: left;
 }
 
@@ -25,7 +30,7 @@ diva { border:1px solid #ff0000; }
 .tit { margin:10px 0; }
 
 /* left */
-.box_left { width: 33%;  display: inline-block;}  /* padding:14px 0; margin:0 auto;  */
+.box_left { width: 20%; padding:14px 0;}  /*  margin:0 auto;  */
 .left_menu li { list-style:none; }
 .left_menu > li { padding:10px 0 0 10px; }
 .left_menu > li > ul > li { padding:10px 0 0 15px; }
@@ -37,7 +42,7 @@ diva { border:1px solid #ff0000; }
 .left_label { padding-bottom:4px; }
 
 /* right */
-.box_right { width:30%;  display: inline-block; } /* padding:14px 0; */
+.box_right { width:65%;  } /* padding:14px 0; */
 
 /* right-main */
 .main_search { margin:5px 0; }

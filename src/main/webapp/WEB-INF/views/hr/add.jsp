@@ -15,55 +15,11 @@
 $j(document).ready(function(){
 
 		
-	var lunar = ${hrVo.lunar}
-		
-	if(lunar == 1){
-		$j('input[name="lunar"][id="solar"]').prop('checked', true);
-	}
-	if(lunar == 2){
-		$j('input[name="lunar"][id="lunar"]').prop('checked', true);
-		
-	}
 	
-	var sex = ${hrVo.sex}
-	if(sex == 1){
-		$j('input[name="sex"][id="m"]').prop('checked', true);
-	}
-	if(sex == 2){
-		$j('input[name="sex"][id="f"]').prop('checked', true);
-		
-	}
-	
-	var married = ${hrVo.marryYear}
-	
-	if(married == 0){
-		$j('input[name="marryYear"][id="notMarried"]').prop('checked', true);
-	}
-	if(married == 1){
-		$j('input[name="marryYear"][id="married"]').prop('checked', true);
-	}
-	
-	var hopeWork = ${hrVo.hopeWork}
-	
-	if(hopeWork == 0){
-		$j('#hopeWork').val('0').prop('selected', true);	
-	}
-	if(hopeWork == 1){
-		$j('#hopeWork').val('1').prop('selected', true);	
-	}
-	
-	var employee = ${hrVo.employee}
-	
-	if(employee == 0){
-		$j('#employee').val('0').prop('selected', true);
-	}
-	if(employee == 1){
-		$j('#employee').val('1').prop('selected', true);
-	}
 	
 });
 
-function modifySubmit(form){
+function addSubmit(form){
 	
 	var id = form.id.value;
 	var name = form.name.value;
@@ -100,7 +56,7 @@ function modifySubmit(form){
 	    data : param,
 	    success: function(data, textStatus, jqXHR)
 	    {
-	    	alert('수정되었습니다');
+	    	alert('추가되었습니다');
 	    	window.location.href = "/hr/modify.do?id="+id;
 	    }
 	});
@@ -134,39 +90,39 @@ function modifySubmit(form){
 			<li><a href="#">근무정보</a></li>
 		</ul>
 	</div>
-	<form onsubmit="modifySubmit(this); return false;" class="modifySubmit" method="POST">
+	<form onsubmit="addSubmit(this); return false;" class="addSubmit" method="POST">
 	<div class="page_box">
 		<div class="page_in float_h">
 			<div class="picture_pr float_l"><img alt="증명사진" src=""></div>
 			<div class="page_mar2 float_l">
-				<input type="hidden" name="id" value="${param.id}">
+				<input type="hidden" name="id">
 				<div class="page_mar1">
 					<label class="page4_1">한글이름 : </label>
-					<input type="text" name="name" value="${hrVo.name}">
+					<input type="text" name="name">
 				</div>
 				<div class="page_mar1">
 					<label class="page4_1">영문이름 : </label>
-					<input type="text" name="engName" value="${hrVo.engName}">
+					<input type="text" name="engName">
 				</div>
 				<div class="page_mar1">
 					<label class="page4_1">한문이름: </label>
-					<input type="text" name="hanName" value="${hrVo.hanName}">
+					<input type="text" name="hanName">
 				</div>
 				<div class="page_mar1">
 					<label class="page4_1">주민등록번호 : </label>
-					<input name="identifyNum" type="text" size="6" maxlength="6" value="${hrVo.identifyNum}"> - <input name="identifyNum2" type="text" size="7" maxlength="7" value="${hrVo.identifyNum2}">
+					<input name="identifyNum" type="text" size="6" maxlength="6"> - <input name="identifyNum2" type="text" size="7" maxlength="7">
 				</div>
 			</div>
 		</div>
 		<div class="page_in clear_b">
 			<div class="page_line page_mar1">
 				<label class="page4_1">사진파일명 : </label>
-				<input name="photo" type="text" size="40" value="${hrVo.photo}"> <font color="#FF0000"><img src="/resources/image/bt_search.gif" width="49" height="18"></font>
+				<input name="photo" type="text" size="40"> <font color="#FF0000"><img src="/resources/image/bt_search.gif" width="49" height="18"></font>
 			</div>
 			
 			<div class="page_line page_mar1">
 				<label class="page4_1">생년월일 : </label>
-				<input name="birthYear" type="text" size="8" value="${hrVo.birthYear}"> 년 <input name="birthYear2" type="text" size="5" value="${hrVo.birthYear2}"> 월 <input name="birthYear3" type="text" size="5"  value="${hrVo.birthYear3}"> 일 ( <input type="radio" name="lunar" value="1" id="solar"> 양력 <input id="lunar" type="radio" name="lunar" value="2"> 음력 )
+				<input name="birthYear" type="text" size="8"> 년 <input name="birthYear2" type="text" size="5"> 월 <input name="birthYear3" type="text" size="5" > 일 ( <input type="radio" name="lunar" value="1" id="solar"> 양력 <input id="lunar" type="radio" name="lunar" value="2"> 음력 )
 			</div>
 			<div class="page_line page_mar1">
 				<label class="page4_1">성별 : </label>

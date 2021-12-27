@@ -33,7 +33,7 @@ function modify(){
 
 </script>
 <body>
-<div class="box_right">
+<div class="box_right cell">
 	<div class="tit f_bold">
 		<img alt="icon" src="/resources/image/icon.gif"> 사원조회
 	</div>
