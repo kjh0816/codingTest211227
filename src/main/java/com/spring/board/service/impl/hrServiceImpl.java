@@ -37,6 +37,12 @@ public class hrServiceImpl implements hrService{
 		// TODO Auto-generated method stub
 		return hrDao.updateHr(hrVo);
 	}
+
+	@Override
+	public int insertHr(HrVo hrVo) throws Exception {
+		// TODO Auto-generated method stub
+		return hrDao.insertyHr(hrVo);
+	}
 	
 	
 	

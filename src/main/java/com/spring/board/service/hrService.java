@@ -14,6 +14,8 @@ public interface hrService {
 
 	int updateHr(HrVo hrVo) throws Exception;
 
+	int insertHr(HrVo hrVo) throws Exception;
+
 
 
 	

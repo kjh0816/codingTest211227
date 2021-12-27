@@ -115,5 +115,36 @@ public class UsrController {
 		
 		return callbackMsg;
 	}
+	
+	@RequestMapping(value = "/hr/add.do", method = RequestMethod.GET)
+	public String showAdd(
+			
+			) throws Exception{
+		
+		
+		return "hr/add";
+	}
+	
+	@RequestMapping(value = "/hr/doAdd.do", method = RequestMethod.POST)
+	@ResponseBody
+	public String doAdd(
+			HrVo hrVo
+			) throws Exception{
+		
+		hrVo.setIdentifyNum(hrVo.getIdentifyNum() + "-" + hrVo.getIdentifyNum2());
+		hrVo.setPhone(hrVo.getPhone() + "-" + hrVo.getPhone2() + "-" + hrVo.getPhone3());
+		hrVo.setBirthYear(hrVo.getBirthYear() + "-" + hrVo.getBirthYear2() + "-" + hrVo.getBirthYear3());
+		hrVo.setAddr(hrVo.getPostNo() + "-" +hrVo.getAddr());
+		
+		int resultCnt = hrService.insertHr(hrVo);
+		
+		HashMap<String, Object> result = new HashMap<String, Object>();
+		CommonUtil commonUtil = new CommonUtil();
+		
+		String callbackMsg = commonUtil.getJsonCallBackString(" ",result);
+		
+		return callbackMsg;
+		
+	}
 
 }

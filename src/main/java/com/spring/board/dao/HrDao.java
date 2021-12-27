@@ -14,6 +14,8 @@ public interface HrDao {
 	HrVo selectHrById(String id) throws Exception;
 
 	int updateHr(HrVo hrVo) throws Exception;
+
+	int insertyHr(HrVo hrVo) throws Exception;
 	
 
 

@@ -84,5 +84,50 @@
         WHERE USER_NO = #{id} 
     </select>
     
+    <select id="insertHr" parameterType="com.spring.board.vo.HrVo">
+        INSERT INTO 
+        IS_MATER
+        (USER_NO
+	        ,KOR_NAME
+	        ,ENG_NAME
+	        ,HAN_NAME
+	        ,JUMIN_NO
+	        ,SAJIN_NM
+	        ,BIRTH_YMD
+	        ,BIRTH_RN
+	        ,SEX
+	        ,MARRY_YN
+	        ,WORK_YEAR
+	        ,JOIN_ST
+	        ,HOPE_WORK
+	        ,ADDR
+	        ,TEL
+	        ,EMAIL
+	        ,TECH_GRD
+	        ,ALC_QT
+        )
+        VALUES
+        (NVL((SELECT TO_NUMBER(MAX(USER_NO) + 1)
+	    FROM IS_MATER), 1)
+        ,#{name}
+        ,#{engName}
+        ,#{hanName}
+        ,#{identifyNum}
+        ,#{photo}
+        ,#{birthYear}
+        ,#{lunar}
+        ,#{sex}
+        ,#{marryYear}
+        ,#{workYear}
+        ,#{employee}
+        ,#{hopeWork}
+        ,#{addr}
+        ,#{phone}
+        ,#{email}
+        ,#{techLevel}
+        ,#{alcohol}
+        )
+    </select>
+    
     
 </mapper>

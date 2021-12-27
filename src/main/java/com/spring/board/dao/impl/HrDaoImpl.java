@@ -38,6 +38,12 @@ public class HrDaoImpl implements HrDao{
 		// TODO Auto-generated method stub
 		return sqlSession.update("hr.updateHr", hrVo);
 	}
+
+	@Override
+	public int insertyHr(HrVo hrVo) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.insert("hr.insertHr", hrVo);
+	}
 	
 	
 	

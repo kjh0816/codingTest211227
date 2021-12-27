@@ -45,19 +45,19 @@ function addSubmit(form){
 	var techLevel = form.techLevel.value;
 	var alcohol = form.alcohol.value;
 	
-	var $frm = $j('.modifySubmit :input');
+	var $frm = $j('.addSubmit :input');
 	var param = $frm.serialize();
 	
 	
 	$j.ajax({
-	    url : "/hr/doModify.do",
+	    url : "/hr/doAdd.do",
 	    dataType: "json",
 	    type: "POST",
 	    data : param,
 	    success: function(data, textStatus, jqXHR)
 	    {
 	    	alert('추가되었습니다');
-	    	window.location.href = "/hr/modify.do?id="+id;
+	    	window.location.href = "/hr/main.do";
 	    }
 	});
 }
@@ -136,7 +136,7 @@ function addSubmit(form){
 			
 			<div class="page_line page_mar1">
 				<label class="page4_1">년차 : </label>
-				<input name="workYear" type="text" size="10" value="${hrVo.workYear}">
+				<input name="workYear" type="text" size="10">
 			</div>
 			<div class="page_line page_mar1">
 				<label class="page4_1">급여 지급유형 : </label>
@@ -160,27 +160,27 @@ function addSubmit(form){
 			</div>
 			<div class="page_line page_mar1">
 				<label class="page4_1">주소 : </label>
-				<input name="postNo" type="text" size="10" value="${hrVo.postNo}"> <input name="addr" type="text" size="40" value="${hrVo.addr}">
+				<input name="postNo" type="text" size="10"> <input name="addr" type="text" size="40">
 			</div>
 			<div class="page_line page_mar1">
 				<label class="page4_1">연락처 : </label>
-				<input name="phone" type="text" size="10" value="${hrVo.phone}"> - <input name="phone2" type="text" size="10" value="${hrVo.phone2}"> - <input name="phone3" type="text" size="10" value="${hrVo.phone3}">
+				<input name="phone" type="text" size="10"> - <input name="phone2" type="text" size="10"> - <input name="phone3" type="text" size="10">
 			</div>
 			<div class="page_line page_mar1">
 				<label class="page4_1">이메일 : </label>
-				<input name="email" type="text" size="20" value="${hrVo.email}">
+				<input name="email" type="text" size="20">
 			</div>
 			<div class="page_line page_mar1">
 				<label class="page4_1">기술등급 : </label>
-				<input name="techLevel" type="text" size="20" value="${hrVo.techLevel}">
+				<input name="techLevel" type="text" size="20">
 			</div>
 			<div class="page_mar1">
 				<label class="page4_1">주량 : </label>
-				<input name="alcohol" type="text" size="20" value="${hrVo.alcohol}">
+				<input name="alcohol" type="text" size="20">
 			</div>
 		</div>
 		<div class="btn_all">
-			<button><img alt="remove" src="/resources/image/bt_remove.gif"></button>
+			<button><img alt="remove" src="/resources/image/bt_enter.gif"></button>
 			<button type="reset"><img alt="cancel" src="/resources/image/bt_cancel.gif"></button>
 		</div>
 	</div>
