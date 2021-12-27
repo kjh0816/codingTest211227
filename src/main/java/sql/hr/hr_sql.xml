@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hr">
+    
+    <resultMap type="com.spring.board.vo.HrVo" id="hrVo">
+   		<result property="id" 	column="USER_NO"/>
+    	<result property="name" 	column="KOR_NAME"/>
+    	<result property="engName" 	column="ENG_NAME"/>
+    	<result property="hanName" 	column="HAN_NAME"/>
+    	<result property="identifyNum" 	column="JUMIN_NO"/>
+    	<result property="photo" 	column="SAJIN_NM"/>
+    	<result property="birthYear" 	column="BIRTH_YMD"/>
+    	<result property="lunar" 	column="BIRTH_RN"/>
+    	<result property="sex" 	column="SEX"/>
+    	<result property="marryYear" 	column="MARRY_YN"/>
+    	<result property="workYear" 	column="WORK_YEAR"/>
+    	<result property="employee" 	column="JOIN_ST"/>
+    	<result property="hopeWork" 	column="HOPE_WORK"/>
+    	<result property="addr" 	column="ADDR"/>
+    	<result property="phone" 	column="TEL"/>
+    	<result property="email" 	column="EMAIL"/>
+    	<result property="techLevel" 	column="TECH_GRD"/>
+    	<result property="alcohol" 	column="ALC_QT"/>
+    </resultMap>
+    
+    <select id="hrList" resultMap="hrVo">
+    	SELECT
+    		USER_NO
+    		, KOR_NAME
+    		, JUMIN_NO
+    		, SEX
+    		, TECH_GRD
+    		, JOIN_ST
+   		FROM
+   			IS_MATER
+    </select>
+    
+    <select id="hrById" parameterType="String" resultMap="hrVo">
+    	SELECT
+	    	USER_NO
+	        ,KOR_NAME
+	        ,ENG_NAME
+	        ,HAN_NAME
+	        ,JUMIN_NO
+	        ,SAJIN_NM
+	        ,BIRTH_YMD
+	        ,BIRTH_RN
+	        ,SEX
+	        ,MARRY_YN
+	        ,WORK_YEAR
+	        ,JOIN_ST
+	        ,HOPE_WORK
+	        ,ADDR
+	        ,TEL
+	        ,EMAIL
+	        ,TECH_GRD
+	        ,ALC_QT
+        FROM 
+        	IS_MATER
+       	WHERE USER_NO = #{id}
+    </select>
+    
+    <select id="updateHr" parameterType="com.spring.board.vo.HrVo" resultMap="hrVo">
+    	UPDATE
+    		IS_MATER
+   		SET
+   			KOR_NAME = #{name}
+	        ,ENG_NAME = #{engName}
+	        ,HAN_NAME = #{hanName}
+	        ,JUMIN_NO = #{identifyNum}
+	        ,SAJIN_NM = #{photo}
+	        ,BIRTH_YMD = #{birthYear}
+	        ,BIRTH_RN = #{lunar}
+	        ,SEX = #{sex}
+	        ,MARRY_YN = #{marryYear}
+	        ,WORK_YEAR = #{workYear}
+	        ,JOIN_ST = #{employee}
+	        ,HOPE_WORK = #{hopeWork}
+	        ,ADDR = #{addr}
+	        ,TEL = #{phone}
+	        ,EMAIL = #{email}
+	        ,TECH_GRD = #{techLevel}
+	        ,ALC_QT = #{alcohol}
+        WHERE USER_NO = #{id} 
+    </select>
+    
+    
+</mapper>
